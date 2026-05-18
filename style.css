@@ -1,0 +1,242 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    height:100vh;
+    background:linear-gradient(to top,#87ceeb,#dff6ff);
+    font-family:sans-serif;
+}
+
+.scene{
+    position:relative;
+    width:100%;
+    height:100vh;
+}
+
+.sun{
+    width:120px;
+    height:120px;
+    background:gold;
+    border-radius:50%;
+    position:absolute;
+    top:50px;
+    right:100px;
+    box-shadow:0 0 60px gold;
+}
+
+.ground{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:180px;
+    background:#4caf50;
+}
+
+.tree{
+    position:absolute;
+    left:50%;
+    bottom:140px;
+    transform:translateX(-50%);
+    animation:sway 3s ease-in-out infinite alternate;
+}
+
+.trunk{
+    width:80px;
+    height:320px;
+    background:#6d3f1d;
+    border-radius:30px;
+    margin:auto;
+}
+
+.leaves{
+    position:absolute;
+    bottom:220px;
+    left:50%;
+    transform:translateX(-50%);
+    width:350px;
+    height:350px;
+    background:#1f8f3d;
+    border-radius:50%;
+    box-shadow:
+    -100px 40px #289c47,
+    100px 40px #289c47,
+    0 -70px #2daa4e;
+}
+
+.mango{
+    position:absolute;
+    width:25px;
+    height:38px;
+    background:gold;
+    border-radius:50%;
+    animation:mangoMove 2s infinite alternate;
+}
+
+.m1{top:70px; left:90px;}
+.m2{top:130px; left:220px;}
+.m3{top:90px; left:170px;}
+.m4{top:180px; left:120px;}
+.m5{top:170px; left:260px;}
+.m6{top:230px; left:180px;}
+
+.child{
+    position:absolute;
+    bottom:120px;
+    width:70px;
+    height:150px;
+    animation:jump 1s infinite alternate;
+}
+
+.left-child{
+    left:20%;
+}
+
+.right-child{
+    right:20%;
+}
+
+.head{
+    width:40px;
+    height:40px;
+    background:#ffd3a6;
+    border-radius:50%;
+    margin:auto;
+}
+
+.body{
+    width:24px;
+    height:70px;
+    background:#ff5722;
+    margin:auto;
+    border-radius:10px;
+}
+
+.blue{
+    background:#2196f3;
+}
+
+.arm{
+    width:45px;
+    height:10px;
+    background:#ffd3a6;
+    position:absolute;
+    top:55px;
+    transform-origin:left center;
+}
+
+.left-arm{
+    left:-10px;
+    animation:armMove 1s infinite alternate;
+}
+
+.right-arm{
+    right:-10px;
+    animation:armMove 1s infinite alternate-reverse;
+}
+
+.leg{
+    width:10px;
+    height:50px;
+    background:#222;
+    position:absolute;
+    top:100px;
+}
+
+.left-leg{
+    left:18px;
+}
+
+.right-leg{
+    right:18px;
+}
+
+.stick{
+    width:6px;
+    height:150px;
+    background:#795548;
+    position:absolute;
+    top:-70px;
+    left:55px;
+    transform:rotate(-25deg);
+}
+
+.leaf{
+    width:15px;
+    height:15px;
+    background:#2e7d32;
+    border-radius:50%;
+    position:absolute;
+    top:-20px;
+}
+
+.leaf1{
+    left:15%;
+    animation:fall 6s linear infinite;
+}
+
+.leaf2{
+    left:35%;
+    animation:fall 8s linear infinite;
+}
+
+.leaf3{
+    left:60%;
+    animation:fall 7s linear infinite;
+}
+
+.leaf4{
+    left:80%;
+    animation:fall 5s linear infinite;
+}
+
+@keyframes sway{
+    from{
+        transform:translateX(-50%) rotate(-2deg);
+    }
+    to{
+        transform:translateX(-50%) rotate(2deg);
+    }
+}
+
+@keyframes armMove{
+    from{
+        transform:rotate(-20deg);
+    }
+    to{
+        transform:rotate(20deg);
+    }
+}
+
+@keyframes jump{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-12px);
+    }
+}
+
+@keyframes fall{
+    0%{
+        top:-20px;
+        transform:translateX(0);
+    }
+
+    100%{
+        top:100vh;
+        transform:translateX(80px);
+    }
+}
+
+@keyframes mangoMove{
+    from{
+        transform:rotate(-3deg);
+    }
+    to{
+        transform:rotate(3deg);
+    }
+  }
